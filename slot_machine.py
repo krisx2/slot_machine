@@ -10,14 +10,14 @@ COLUMNS = 3
 REWARDS = {
     "A": 3,
     "B": 4,
-    "C": 6,
+    "C": 15,
     "D": 4,
 }
 multipliers = {
-    "A": 4,
-    "B": 3,
+    "A": 10,
+    "B": 5,
     "C": 2,
-    "D": 3,
+    "D": 5,
 }
 
 
@@ -71,7 +71,7 @@ def deposit():
             print("Please enter a number.\n")
 
         elif int(deposit_amount) == 0:
-            print("Cheap ass....Deposit must be more than 0.\n")
+            print("Deposit must be more than 0.\n")
 
         else:
             return int(deposit_amount)
@@ -110,7 +110,7 @@ def retry_game(current_balance):
     while True:
         bets = bet_on_each_line()
         total_bet = lines * bets
-        if total_bet < current_balance:
+        if total_bet <= current_balance:
             break
         print(f"You dont have enough... Your current balance is ${current_balance}")
 
